@@ -4,6 +4,8 @@ function rollDices () {
     let data = getData().get("dices").replaceAll(' ', '').split("+");
     let rollTotal = 0;
     let allResults = new Array();
+    
+    const diceElement = document.getElementById("diceAnimation");
 
     data.forEach(element => {
         // Split each diceroll to number of dices and the dice type
@@ -20,12 +22,12 @@ function rollDices () {
             else if (dice[1] == 20 && rollResult == 20) {
                 criticalMessage = " (critical hit)";
             }
-            document.getElementById("rollResults").innerHTML +=  "d"+dice[1]+": " + rollResult + criticalMessage + "</br>";
+            document.getElementById("rollResults").innerHTML +=  "<p>d"+dice[1]+": " + rollResult + criticalMessage + "</p>";
         }
        
     });
-
-    document.getElementById("rollTotal").innerHTML += "</br>KOKKU: "
+    // Display all roll results and the sum of rolls. Iterate through rollResult array
+    document.getElementById("rollTotal").innerHTML += "<p>KOKKU: ";
     var isFirstElement = true;
 
     allResults.forEach(element => {
@@ -47,12 +49,17 @@ function rollDices () {
    
 
 }
-
+/*
+    Clear all result from corresponding HTML div-s
+*/
 function clearRolls() {
     document.getElementById("rollResults").innerHTML = "";
     document.getElementById("rollTotal").innerHTML = "";
 }
 
+/*
+    Function gets data from HTML from when "VEERETA" button is clicked
+*/
 function getData() {
     // Get data from form
     let form = document.getElementById("formdd");
@@ -60,5 +67,9 @@ function getData() {
 
 }
 
-
-
+/*
+    Display rolling animation based on dice and result
+*/
+function displayRollingAnimation() {
+    return null;
+}
