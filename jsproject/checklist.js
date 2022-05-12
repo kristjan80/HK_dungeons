@@ -25,6 +25,7 @@ function isBoxChecked (clickedElement) {
 
 //  based on checkbos value, add strikethrough or remove it
 function strikeThrough (clickedElement) {
+    
     const isChecked = isBoxChecked(clickedElement);
     let productValue = document.getElementById("toodeval" +clickedElement.value).innerHTML;
     let newProductValue = "";
